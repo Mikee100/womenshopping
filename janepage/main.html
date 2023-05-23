@@ -11,10 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,400;1,500;1,700;1,900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="design.css">
+  
      
 </head>
 <body>
+    <script  src="app.js">  </script>
     <div class="container">
+        
+
+       
+
+        
     <div class="nav">
         <h1 class=" company_name ">Soleil Africa Leather </h1>
         <div class="nav_items">
@@ -24,7 +31,7 @@
             <li><a href=""> Contact</a> </li>  
         </ul>
         </div>
-            <i class="fa fa-shopping-cart cart " aria-hidden="true"></i>
+            <i class="fa fa-shopping-cart cart " aria-hidden="true"></i><p style="color:black;" class="count">0</p>
     </div>
             <hr> 
                     <div class="choose_bag">
@@ -32,13 +39,8 @@
             <p class="img_bag_desc">Bags</p>
    </div>
 
-        <div class="left_control">
 
-
-
-        </div>
-
-        <div class="main_control">
+   <div class="main_control" id="main_control">
     <!---   Bag 1  -->
             <div class="img_container1">
                 
@@ -46,7 +48,7 @@
                 <p class="bag_description" > Chanel Italian Leather Bag </p>
                 <p class="bag_price">Kshs.2500</p>
           
-                <button class="addtocart_btn"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
+                <button class="addtocart_btn"onclick="addtocart()"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
 
             </div>
     <!---   Bag 2  -->
@@ -56,7 +58,7 @@
         <p class="bag_description" > Chanel Italian Leather Bag </p>
         <p class="bag_price">Kshs.2500</p>
   
-        <button class="addtocart_btn"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
+        <button class="addtocart_btn" onclick="addtocart()" > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
 
     </div>
     <!---   Bag 3  -->
@@ -66,7 +68,7 @@
         <p class="bag_description" > Chanel Italian Leather Bag </p>
         <p class="bag_price">Kshs.2500</p>
   
-        <button class="addtocart_btn"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
+        <button class="addtocart_btn"  onclick="addtocart()"> Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
 
     </div>
     <!---   Bag 4  -->
@@ -76,7 +78,7 @@
         <p class="bag_description" > Chanel Italian Leather Bag </p>
         <p class="bag_price">Kshs.2500</p>
   
-        <button class="addtocart_btn"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
+        <button class="addtocart_btn" onclick="addtocart()" > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
 
     </div>
     <!---   Bag 5  -->
@@ -86,7 +88,7 @@
         <p class="bag_description" > Chanel Italian Leather Bag </p>
         <p class="bag_price">Kshs.2500</p>
   
-        <button class="addtocart_btn"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
+        <button class="addtocart_btn" onclick="addtocart()" > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
 
     </div>
      <!---   Bag 6  -->
@@ -96,7 +98,7 @@
         <p class="bag_description" > Chanel Italian Leather Bag </p>
         <p class="bag_price">Kshs.2500</p>
   
-        <button class="addtocart_btn"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
+        <button class="addtocart_btn" onclick="addtocart()"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
 
     </div>
      <!---   Bag 7 -->
@@ -106,7 +108,7 @@
         <p class="bag_description" > Chanel Italian Leather Bag </p>
         <p class="bag_price">Kshs.2500</p>
   
-        <button class="addtocart_btn"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
+        <button class="addtocart_btn" onclick="addtocart()"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
 
     </div>
      <!---   Bag 8 -->
@@ -116,12 +118,58 @@
         <p class="bag_description" > Chanel Italian Leather Bag </p>
         <p class="bag_price">Kshs.2500</p>
   
-        <button class="addtocart_btn"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
+        <button class="addtocart_btn" onclick="addtocart()"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
 
     </div>
 
 
            
+
+        </div>
+
+        <div class="left_control">
+
+                <div class="price_heading_top">
+                    <fieldset  >
+                        <legend> Price </legend>
+
+                        <input type="number"  value="900" class="min_number" >
+                        <input type="number"  value="12000" class="max_number"  >
+
+                        
+
+                    </fieldset>
+                </div>
+            
+            <div class="checkboxes1">
+            <input type="checkbox" class="turkey_bags" id="bag_type1">
+            <label for="bag_type1" class="turkey_name" >Turkey Bags </label>
+              </div>
+              <div class="checkboxes2">
+                <input type="checkbox" class="turkey_bags" id="bag_type2">
+                <label for="bag_type2" class="turkey_name" >European Bags </label>
+                  </div>
+                  <div class="checkboxes3">
+                    <input type="checkbox" class="turkey_bags" id="bag_type3">
+                    <label for="bag_type3" class="turkey_name" >China Bags </label>
+                      </div>
+                      <div class="checkboxes4">
+                        <input type="checkbox" class="turkey_bags" id="bag_type4">
+                        <label for="bag_type4" class="turkey_name" >Italian Bags </label>
+                          </div>
+
+
+        </div>
+
+        
+
+        <div class="cart_container">
+
+            <p class="cart_hd" >Cart</pl>
+            <hr class="hr_cart">
+       
+            <p id="cardItem" class="cart_desc">Your cart is empty </p>
+
 
         </div>
         
@@ -130,6 +178,132 @@
 
     </div>
 </div>
+
+<script>
+    const product = [
+{
+    id: 0,
+    image:  'bag1.jfif',
+    title:  'Chanel Bag' ,
+    price: 2500,
+},
+{
+    id: 1,
+    image:  'bag2.jfif',
+    title:  'Chanel Bag' ,
+    price: 2500,
+},
+{
+    id: 2,
+    image:  'bag3.jfif',
+    title:  'Chanel Bag' ,
+    price: 2500,
+},
+{
+    id: 3,
+    image:  'bag4.jfif',
+    title:  'Chanel Bag' ,
+    price: 2500,
+},
+{
+    id: 4,
+    image:  'bag5.jfif',
+    title:  'Chanel Bag' ,
+    price: 2500,
+},
+{
+    id: 5,
+    image:  'bag6.jfif',
+    title:  'Chanel Bag' ,
+    price: 2500,
+},
+{
+    id: 6,
+    image:  'bag7.jfif',
+    title:  'Chanel Bag' ,
+    price: 2500,
+},
+
+{
+    id: 7,
+    image:  'bag8.jfif',
+    title:  'Chanel Bag' ,
+    price: 2500,
+}
+];
+
+   
+const categories = [  ...new Set(product.map((item) =>
+    {return item}))]
+    let i = 0;
+    document.getElementById('main_control').innerHTML=categories.map((item) =>
+    {
+
+       var{image,title,price} = item;
+       return(
+        ` <div class='main_control'>
+           <div class='img_container1'>
+               <img class='images' src=${image}</img> 
+               </div>
+            <div class ='bottom'>      
+               <p style="margin-left:45px; font-size:13px; padding-bottom:5px; font-family: 'Kumbh Sans', sans-serif; color: rgb(197, 191, 191); " > ${title}</p>   
+                  <p  style="font-size:12px;margin-left:45px;font-family: 'Kumbh Sans', sans-serif;font-weight:bolder;  color: rgb(197, 191, 191);" > $${price}.00 </p>`+ 
+                
+                "<button onclick='addtocart("+(i++)+")'>Add to cart</button> "
+             
+       `</div>
+           </div>  `
+           
+       )
+
+    
+}).join('')  
+var cart = [];
+
+
+function addtocart(a){
+cart.push({...categories[a]});
+displayCart();
+}
+
+function displayCart(a){
+
+let j = 0;
+if(cart.length ==0){
+   document.getElementById(cart_container).innerHTML = "Your cart is empty";
+}
+else{
+   document.getElementById(cart_container).innerHTML = cart.map((items) =>
+   {
+       var{image,title,name} = items;
+       return(
+           `<div class = 'cart_container'>
+               <div class = 'row-img'>
+                    <img class = 'rowimg' src = ${image}>
+                    </div>
+                    <p style= 'font-style:12px;'>${title}</p>
+                    <h2 style= 'font-size:15px;'>${price}.00</h2>
+                   
+               </div>
+           `
+
+       )
+
+   });
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
 
 
     
