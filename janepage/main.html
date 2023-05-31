@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +17,12 @@
      
 </head>
 <body>
-    <script  src="app.js">  </script>
+    
     <div class="container">
         
-
+<div class="root" id="root">
+  
+</div>
        
 
         
@@ -30,8 +34,11 @@
             <li><a href=""> About</a> </li>
             <li><a href=""> Contact</a> </li>  
         </ul>
-        </div>
-            <i class="fa fa-shopping-cart cart " aria-hidden="true"></i><p style="color:black;" class="count">0</p>
+        </div >
+        <div onclick="openCart()" >
+            <i class="fa fa-shopping-cart cart "  aria-hidden="true"></i><p style="color:black;" class="count" id="count" >0</p>
+          
+            </div>
     </div>
             <hr> 
                     <div class="choose_bag">
@@ -39,107 +46,30 @@
             <p class="img_bag_desc">Bags</p>
    </div>
 
-
-   <div class="main_control" id="main_control">
-    <!---   Bag 1  -->
-            <div class="img_container1">
-                
-                <img class="bag" src="bag1.jfif" alt="" >
-                <p class="bag_description" > Chanel Italian Leather Bag </p>
-                <p class="bag_price">Kshs.2500</p>
-          
-                <button class="addtocart_btn"onclick="addtocart()"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
-
-            </div>
-    <!---   Bag 2  -->
-    <div class="img_container2">
-                
-        <img class="bag" src="bag2.jfif" alt="" >
-        <p class="bag_description" > Chanel Italian Leather Bag </p>
-        <p class="bag_price">Kshs.2500</p>
+<!---->
   
-        <button class="addtocart_btn" onclick="addtocart()" > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
-
-    </div>
-    <!---   Bag 3  -->
-    <div class="img_container3">
-                
-        <img class="bag" src="bag3.jfif" alt="" >
-        <p class="bag_description" > Chanel Italian Leather Bag </p>
-        <p class="bag_price">Kshs.2500</p>
-  
-        <button class="addtocart_btn"  onclick="addtocart()"> Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
-
-    </div>
-    <!---   Bag 4  -->
-    <div class="img_container4">
-                
-        <img class="bag" src="bag4.jfif" alt="" >
-        <p class="bag_description" > Chanel Italian Leather Bag </p>
-        <p class="bag_price">Kshs.2500</p>
-  
-        <button class="addtocart_btn" onclick="addtocart()" > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
-
-    </div>
-    <!---   Bag 5  -->
-       <div class="img_container5">
-                
-        <img class="bag" src="bag5.jfif" alt="" >
-        <p class="bag_description" > Chanel Italian Leather Bag </p>
-        <p class="bag_price">Kshs.2500</p>
-  
-        <button class="addtocart_btn" onclick="addtocart()" > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
-
-    </div>
-     <!---   Bag 6  -->
-     <div class="img_container6">
-                
-        <img class="bag" src="bag6.jfif" alt="" >
-        <p class="bag_description" > Chanel Italian Leather Bag </p>
-        <p class="bag_price">Kshs.2500</p>
-  
-        <button class="addtocart_btn" onclick="addtocart()"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
-
-    </div>
-     <!---   Bag 7 -->
-     <div class="img_container7">
-                
-        <img class="bag" src="bag7.jfif" alt="" >
-        <p class="bag_description" > Chanel Italian Leather Bag </p>
-        <p class="bag_price">Kshs.2500</p>
-  
-        <button class="addtocart_btn" onclick="addtocart()"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
-
-    </div>
-     <!---   Bag 8 -->
-     <div class="img_container8">
-                
-        <img class="bag" src="bag8.jfif" alt="" >
-        <p class="bag_description" > Chanel Italian Leather Bag </p>
-        <p class="bag_price">Kshs.2500</p>
-  
-        <button class="addtocart_btn" onclick="addtocart()"  > Add to cart&nbsp&nbsp<i class="fa fa-shopping-cart cart_btn " aria-hidden="true"></i> </button>
-
-    </div>
-
-
-           
-
-        </div>
-
         <div class="left_control">
 
                 <div class="price_heading_top">
                     <fieldset  >
                         <legend> Price </legend>
 
-                        <input type="number"  value="900" class="min_number" >
+                        <input type="number"  value="800" class="min_number" >
                         <input type="number"  value="12000" class="max_number"  >
-
-                        
-
+    
                     </fieldset>
+                     
                 </div>
+                
+                <div class="slider">
+                    <div class="progress"></div>
+                </div>
+                <div class="range-input">
+                    <input type="range" class="range-min" min="0" max="10000" value="800">
+                    <input type="range" class="range-max" min="0" max="10000" value="12000">
+
+                </div>
+               
             
             <div class="checkboxes1">
             <input type="checkbox" class="turkey_bags" id="bag_type1">
@@ -163,12 +93,18 @@
 
         
 
-        <div class="cart_container">
+        <div class="cart_container"  id="cart_container">
 
-            <p class="cart_hd" >Cart</pl>
+
+            <p class="cart_hd" >Cart</p>
+            <div onclick="removeCart() " >
+            <i class="fa fa-solid fa-xmark  "></i>
+            </div>
+            <p id="cartItem" class="cartItem"> Your Cart is empty</p>
             <hr class="hr_cart">
+          
        
-            <p id="cardItem" class="cart_desc">Your cart is empty </p>
+           
 
 
         </div>
@@ -179,131 +115,7 @@
     </div>
 </div>
 
-<script>
-    const product = [
-{
-    id: 0,
-    image:  'bag1.jfif',
-    title:  'Chanel Bag' ,
-    price: 2500,
-},
-{
-    id: 1,
-    image:  'bag2.jfif',
-    title:  'Chanel Bag' ,
-    price: 2500,
-},
-{
-    id: 2,
-    image:  'bag3.jfif',
-    title:  'Chanel Bag' ,
-    price: 2500,
-},
-{
-    id: 3,
-    image:  'bag4.jfif',
-    title:  'Chanel Bag' ,
-    price: 2500,
-},
-{
-    id: 4,
-    image:  'bag5.jfif',
-    title:  'Chanel Bag' ,
-    price: 2500,
-},
-{
-    id: 5,
-    image:  'bag6.jfif',
-    title:  'Chanel Bag' ,
-    price: 2500,
-},
-{
-    id: 6,
-    image:  'bag7.jfif',
-    title:  'Chanel Bag' ,
-    price: 2500,
-},
-
-{
-    id: 7,
-    image:  'bag8.jfif',
-    title:  'Chanel Bag' ,
-    price: 2500,
-}
-];
-
-   
-const categories = [  ...new Set(product.map((item) =>
-    {return item}))]
-    let i = 0;
-    document.getElementById('main_control').innerHTML=categories.map((item) =>
-    {
-
-       var{image,title,price} = item;
-       return(
-        ` <div class='main_control'>
-           <div class='img_container1'>
-               <img class='images' src=${image}</img> 
-               </div>
-            <div class ='bottom'>      
-               <p style="margin-left:45px; font-size:13px; padding-bottom:5px; font-family: 'Kumbh Sans', sans-serif; color: rgb(197, 191, 191); " > ${title}</p>   
-                  <p  style="font-size:12px;margin-left:45px;font-family: 'Kumbh Sans', sans-serif;font-weight:bolder;  color: rgb(197, 191, 191);" > $${price}.00 </p>`+ 
-                
-                "<button onclick='addtocart("+(i++)+")'>Add to cart</button> "
-             
-       `</div>
-           </div>  `
-           
-       )
-
-    
-}).join('')  
-var cart = [];
-
-
-function addtocart(a){
-cart.push({...categories[a]});
-displayCart();
-}
-
-function displayCart(a){
-
-let j = 0;
-if(cart.length ==0){
-   document.getElementById(cart_container).innerHTML = "Your cart is empty";
-}
-else{
-   document.getElementById(cart_container).innerHTML = cart.map((items) =>
-   {
-       var{image,title,name} = items;
-       return(
-           `<div class = 'cart_container'>
-               <div class = 'row-img'>
-                    <img class = 'rowimg' src = ${image}>
-                    </div>
-                    <p style= 'font-style:12px;'>${title}</p>
-                    <h2 style= 'font-size:15px;'>${price}.00</h2>
-                   
-               </div>
-           `
-
-       )
-
-   });
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-</script>
+<script src ="app.js"></script>
 
 
     

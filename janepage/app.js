@@ -1,3 +1,5 @@
+
+
 const product = [
 {
     id: 0,
@@ -53,54 +55,72 @@ const product = [
    
 const categories = [  ...new Set(product.map((item) =>
     {return item}))]
+    
     let i = 0;
-    document.getElementById('main_control').innerHTML=categories.map((item) =>
+    document.getElementById('root').innerHTML=categories.map((item) =>
     {
 
        var{image,title,price} = item;
        return(
-           ` <div class='main_control'>
-           <div class='img_container1'>
-               <img class='images' src=${image}</img> 
-               </div>
-            <div class ='bottom'>      
-               <p style="margin-left:45px; font-size:13px; padding-bottom:5px; font-family: 'Kumbh Sans', sans-serif; color: rgb(197, 191, 191); " > ${title}</p>   
-                  <p  style="font-size:12px;margin-left:45px;font-family: 'Kumbh Sans', sans-serif;font-weight:bolder;  color: rgb(197, 191, 191);" > $${price}.00 </p>`+ 
-                
-                "<button onclick='addtocart("+(i++)+")'>Add to cart</button> "
-             
-       `</div>
-           </div>  `
-           
-       )
+        `  
+      
+            <div class='box'>
+            <div class ='img-box'>
+               <img class='images' src=${image}></img>
+           </div>
 
+               <div class= 'bottom'>
+               <p class='bag_title'> ${title}</p>
+               <h4 class='bag_price' >$ ${price}.00</h2>`+
+               "<button class='addtocart_btn' onclick='addtocart("+(i++)+")' >Add to cart</button>" +
+               `</div>
+               
+               </div>`
+       )
     
 }).join('')  
+
+
+
+
+
 var cart = [];
 
 
 function addtocart(a){
-cart.push({...categories[a]});
-displayCart();
+    cart.push({...categories[a]});
+displaycart();
+}
+function delElement(a){
+    cart.splice(a, 1);
+    displaycart();
 }
 
-function displayCart(a){
+
+
+function displaycart(a){
+
+
 
 let j = 0;
+document.getElementById("count").innerHTML = cart.length;
 if(cart.length ==0){
-   document.getElementById(cart_container).innerHTML = "Your cart is empty";
+   document.getElementById('cartItem').innerHTML = "Your cart is empty";
 }
 else{
-   document.getElementById(cart_container).innerHTML = cart.map((items) =>
+   document.getElementById('cartItem').innerHTML = cart.map((items) =>
    {
-       var{image,title,name} = items;
+       var{image,title,price} = items;
        return(
            `<div class = 'cart-item'>
-               <div class = 'row-img'>
+             
+              
                     <img class = 'rowimg' src = ${image}>
-                    </div>
-                    <p style= 'font-style:12px;'>${title}</p>
-                    <h2 style= 'font-size:15px;'>${price}.00</h2>
+                    
+                  
+                    <p class='item_name' >${title}</p>
+                    <h4 class='item_price' > $${price}.00</h2>
+                    "<i class='fa fa-trash' onclick='delElement("+(i++)+")' ></i>"
                    
                </div>
            `
@@ -110,6 +130,22 @@ else{
    });
 }
 }
+
+let cart_container = document.getElementById("cart_container");
+
+
+function openCart() {
+    cart_container.classList.add("open-cart_container");
+    
+}
+function removeCart() {
+    cart_container.classList.remove("open-cart_container");
+    
+}
+
+
+
+
 
 
 
